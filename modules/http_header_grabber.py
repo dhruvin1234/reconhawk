@@ -7,7 +7,7 @@ def grab_http_headers(url):
         response = requests.get(url, timeout=5)
         print(f"{Fore.GREEN}[+] {url} - HTTP Headers:{Style.RESET_ALL}")
         for header, value in response.headers.items():
-            print(f"{Fore.CYAN}{header}: {value}{Style.RESET_ALL}")
+            print(f"{Fore.RED}{header}: {value}{Style.RESET_ALL}")
     except requests.RequestException as e:
         print(f"{Fore.RED}[-] Error retrieving headers for {url}: {e}{Style.RESET_ALL}")
 

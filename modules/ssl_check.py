@@ -1,35 +1,37 @@
 import ssl
 import socket
-import OpenSSL
+from colorama import Fore, Style
 
 def ssl_check(domain):
     try:
-        # Create a connection to the domain over HTTPS (port 443)
         conn = ssl.create_default_context().wrap_socket(
             socket.socket(socket.AF_INET), server_hostname=domain)
         conn.connect((domain, 443))
         
-        # Get the SSL certificate
         cert = conn.getpeercert()
         
-        # Print SSL certificate details in line-by-line format
-        print(f"\n[+] SSL Certificate Information for {domain}:")
+        print(f"\n{Fore.YELLOW}[+] SSL Certificate Information for {domain}:{Style.RESET_ALL}\n")
         
         # Extract and print issuer
         issuer = dict(x[0] for x in cert['issuer'])
-        print(f"  Issuer: Country={issuer.get('countryName', 'N/A')}, "
-              f"Organization={issuer.get('organizationName', 'N/A')}, "
-              f"Common Name={issuer.get('commonName', 'N/A')}")
+        print(f"{Fore.CYAN}Issuer Information:{Style.RESET_ALL}")
+        print(f"  {Fore.RED}Country:{Style.RESET_ALL} {issuer.get('countryName', 'N/A')}")
+        print(f"  {Fore.RED}Organization:{Style.RESET_ALL} {issuer.get('organizationName', 'N/A')}")
+        print(f"  {Fore.RED}Common Name:{Style.RESET_ALL} {issuer.get('commonName', 'N/A')}\n")
         
         # Extract and print subject
         subject = dict(x[0] for x in cert['subject'])
-        print(f"  Subject: Common Name={subject.get('commonName', 'N/A')}")
+        print(f"{Fore.CYAN}Subject Information:{Style.RESET_ALL}")
+        print(f"  {Fore.RED}Common Name:{Style.RESET_ALL} {subject.get('commonName', 'N/A')}\n")
         
         # Print validity dates
-        print(f"  Valid From: {cert['notBefore']}")
-        print(f"  Valid Until: {cert['notAfter']}")
+        print(f"{Fore.CYAN}Certificate Validity:{Style.RESET_ALL}")
+        print(f"  {Fore.RED}Valid From:{Style.RESET_ALL} {cert['notBefore']}")
+        print(f"  {Fore.RED}Valid Until:{Style.RESET_ALL} {cert['notAfter']}\n")
+        
+        print(f"{Fore.YELLOW}" + "-" * 40 + f"{Style.RESET_ALL}")
         
         conn.close()
     
     except Exception as e:
-        print(f"\033[91m[-] SSL Error: {str(e)}\033[0m")
+        print(f"{Fore.RED}[-] SSL Error: {str(e)}{Style.RESET_ALL}")

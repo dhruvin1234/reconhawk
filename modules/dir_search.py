@@ -14,7 +14,7 @@ def worker(url, extension, queue, total_words, lock):
             response = requests.get(target_url, timeout=5)
             if response.status_code == 200:
                 with lock:
-                    print(f"{Fore.GREEN}[200] Found: {target_url}{Style.RESET_ALL}")
+                    print(f"{Fore.RED}[200] Found: {target_url}{Style.RESET_ALL}")
             elif response.status_code == 403:
                 with lock:
                     print(f"{Fore.MAGENTA}[403] Forbidden: {target_url}{Style.RESET_ALL}")

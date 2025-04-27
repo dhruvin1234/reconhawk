@@ -32,10 +32,8 @@ def main():
 
         if choice == '1':
             domain = input(f"{Fore.GREEN}Enter domain name: {Style.RESET_ALL}")
-            ip = input(f"{Fore.GREEN}Enter IP for Shodan search (leave blank if not needed): {Style.RESET_ALL}")
-            ip = ip.strip() if ip else None
             print(f"{Fore.YELLOW}[+] Starting Information Gathering...{Style.RESET_ALL}")
-            info_gathering.run_info_gathering(domain, ip)
+            info_gathering.run_info_gathering(domain)
 
         elif choice == '2':
             target = input(f"{Fore.GREEN}Enter target IP or domain: {Style.RESET_ALL}")

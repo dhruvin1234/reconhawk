@@ -1,55 +1,39 @@
 import socket
 import whois
 import dns.resolver
-import shodan
 import requests
+from colorama import Fore, Style
 
-def run_info_gathering(domain, ip=None):
-    print("[+] Getting WHOIS info...")
+def run_info_gathering(domain):
+    print(f"\n{Fore.YELLOW}[ WHOIS Information ]{Style.RESET_ALL}")
     try:
         py = whois.whois(domain)
-        print("WHOIS info found.")
-        print("Name: {}".format(py.domain_name))
-        print("Registrar: {}".format(py.registrar))
-        print("Creation Date: {}".format(py.creation_date))
-        print("Expiration Date: {}".format(py.expiration_date))
-        print("Registrant Country: {}".format(py.country))
+        print(f"{Fore.RED}Domain Name:{Style.RESET_ALL} {py.domain_name}")
+        print(f"{Fore.RED}Registrar:{Style.RESET_ALL} {py.registrar}")
+        print(f"{Fore.RED}Creation Date:{Style.RESET_ALL} {py.creation_date}")
+        print(f"{Fore.RED}Expiration Date:{Style.RESET_ALL} {py.expiration_date}")
+        print(f"{Fore.RED}Registrant Country:{Style.RESET_ALL} {py.country}")
     except Exception as e:
-        print(f"[-] WHOIS error: {e}")
+        print(f"{Fore.RED}[-] WHOIS error:{Style.RESET_ALL} {e}")
 
-    print("[+] Getting DNS info...")
+    print(f"\n{Fore.YELLOW}[ DNS Information ]{Style.RESET_ALL}")
     try:
         for record_type in ['A', 'NS', 'MX', 'TXT']:
             answers = dns.resolver.resolve(domain, record_type)
             for rdata in answers:
-                print(f"[+] {record_type} Record: {rdata.to_text()}")
+                print(f"{Fore.RED}{record_type} Record:{Style.RESET_ALL} {rdata.to_text()}")
     except Exception as e:
-        print(f"[-] DNS error: {e}")
+        print(f"{Fore.RED}[-] DNS error:{Style.RESET_ALL} {e}")
 
-    print("[+] Getting geolocation info...")
+    print(f"\n{Fore.YELLOW}[ Geolocation Information ]{Style.RESET_ALL}")
     try:
         ip_address = socket.gethostbyname(domain)
         response = requests.get(f"https://geolocation-db.com/json/{ip_address}").json()
-        print("[+] Country: {}".format(response['country_name']))
-        print("[+] Latitude: {}".format(response['latitude']))
-        print("[+] Longitude: {}".format(response['longitude']))
-        print("[+] City: {}".format(response['city']))
-        print("[+] State: {}".format(response['state']))
+        print(f"{Fore.RED}IP Address:{Style.RESET_ALL} {ip_address}")
+        print(f"{Fore.RED}Country:{Style.RESET_ALL} {response['country_name']}")
+        print(f"{Fore.RED}City:{Style.RESET_ALL} {response['city']}")
+        print(f"{Fore.RED}State:{Style.RESET_ALL} {response['state']}")
+        print(f"{Fore.RED}Latitude:{Style.RESET_ALL} {response['latitude']}")
+        print(f"{Fore.RED}Longitude:{Style.RESET_ALL} {response['longitude']}")
     except Exception as e:
-        print(f"[-] Geolocation error: {e}")
-
-    if ip:
-        print("[+] Getting Shodan info...")
-        try:
-            api = shodan.Shodan("aUVYZFTo6vKPjpSZFyPP9ZXVRuacxUi9")  # ⚡ Note: Hide your API key later!
-            host = api.host(ip)
-            print(f"[+] IP: {host['ip_str']}")
-            print(f"[+] Organization: {host.get('org', 'n/a')}")
-            print(f"[+] Operating System: {host.get('os', 'n/a')}")
-            for item in host['data']:
-                print(f"[+] Port: {item['port']}")
-                print(f"[+] Banner: {item['data']}")
-                print("-" * 20)
-        except Exception as e:
-            print(f"[-] Shodan error: {e}")
-
+        print(f"{Fore.RED}[-] Geolocation error:{Style.RESET_ALL} {e}")
