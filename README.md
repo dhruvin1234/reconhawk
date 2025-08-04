@@ -87,6 +87,9 @@ reconhawk/
 ### 2. Port Scanning
 <img width="1200" height="287" alt="image" src="https://github.com/user-attachments/assets/deee4876-5fc1-40db-a606-22881330d9f5" />
 
+### 3. Directory Search
+<img width="1281" height="553" alt="image" src="https://github.com/user-attachments/assets/4635fa33-d96a-4f37-96bf-901f5d015ad5" />
+
 ### 5. Admin Panel Finder
 <img width="1201" height="356" alt="image" src="https://github.com/user-attachments/assets/7768c3d0-05bb-43c4-b9cf-2d846821485a" />
 
@@ -97,11 +100,13 @@ reconhawk/
 <img width="1490" height="533" alt="image" src="https://github.com/user-attachments/assets/b4ab37ce-f39e-42bf-8fbc-ad23df494047" />
 
 ### 8. SQL Injection Testing
-<img width="1407" height="369" alt="image" src="https://github.com/user-attachments/assets/1da4e48a-3785-42fd-a70a-7697d1b5092d" />
+<img width="1368" height="408" alt="image" src="https://github.com/user-attachments/assets/b05e64a2-4fa4-43fc-af3c-a29ab6af9475" />
 
 ### 9. SSL/TLS Security Check
 <img width="1273" height="388" alt="image" src="https://github.com/user-attachments/assets/1f7fbb4b-8368-4da8-a78c-4e0efd077d08" />
 
+### 10. Exit
+<img width="1214" height="294" alt="image" src="https://github.com/user-attachments/assets/25d39bbd-4801-486c-b4d2-5562eb0739f5" />
 
 
 
