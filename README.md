@@ -78,15 +78,16 @@ reconhawk/
 ```
 ## 📸 Screenshot
 
-### 1. Information Gathering
+
 
 <img width="1200" height="446" alt="image" src="https://github.com/user-attachments/assets/01d73147-e0df-4455-b735-d6ed1677ba6e" />
 
-
+### 1. Information Gathering
 <img width="1266" height="753" alt="image" src="https://github.com/user-attachments/assets/865058c2-0339-4b49-b173-a16c8a69ea52" />
 
-
+### 2. Port Scanning
 <img width="1200" height="287" alt="image" src="https://github.com/user-attachments/assets/deee4876-5fc1-40db-a606-22881330d9f5" />
+
 
 
 
