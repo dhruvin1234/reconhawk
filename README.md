@@ -79,7 +79,6 @@ reconhawk/
 ## 📸 Screenshot
 
 
-
 <img width="1200" height="446" alt="image" src="https://github.com/user-attachments/assets/01d73147-e0df-4455-b735-d6ed1677ba6e" />
 
 ### 1. Information Gathering
@@ -88,9 +87,20 @@ reconhawk/
 ### 2. Port Scanning
 <img width="1200" height="287" alt="image" src="https://github.com/user-attachments/assets/deee4876-5fc1-40db-a606-22881330d9f5" />
 
+### 5. Admin Panel Finder
+<img width="1201" height="356" alt="image" src="https://github.com/user-attachments/assets/7768c3d0-05bb-43c4-b9cf-2d846821485a" />
 
+### 6. HTTP Header Grabber
+<img width="1906" height="429" alt="image" src="https://github.com/user-attachments/assets/9a6f8d01-2b42-42ee-a196-e12b36cdb075" />
 
+### 7. XSS Payload Testing
+<img width="1490" height="533" alt="image" src="https://github.com/user-attachments/assets/b4ab37ce-f39e-42bf-8fbc-ad23df494047" />
 
+### 8. SQL Injection Testing
+<img width="1407" height="369" alt="image" src="https://github.com/user-attachments/assets/1da4e48a-3785-42fd-a70a-7697d1b5092d" />
+
+### 9. SSL/TLS Security Check
+<img width="1273" height="388" alt="image" src="https://github.com/user-attachments/assets/1f7fbb4b-8368-4da8-a78c-4e0efd077d08" />
 
 
 
